@@ -7,15 +7,15 @@ class App {
 
     constructor() {
         this.express = express();
-        this.middleware()
-    }
+        this.middleware();
+    };
 
     private middleware(): void {
         this.express.use('/graphql', graphqlHTTP({
             schema: schema,
             graphiql: process.env.NODE_ENV === 'development'
-        }))
-    }
-}
+        }));
+    };
+};
 
 export default new App().express;
